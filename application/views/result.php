@@ -18,7 +18,6 @@
     <td><?php echo $row->tanggalmasuk ?></td>
     <td><?php echo $row->tanggalkeluar ?></td>
     <td><?php echo $row->berat ?></td>
-    <td><?php echo $row->banyakpaket ?></td>
     <td><?php echo $row->nama_jenis ?></td>
     <td><?php echo $row->nama_pakaian ?></td>
     <td><?php echo $row->bayar ?></td>
