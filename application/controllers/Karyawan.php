@@ -67,13 +67,13 @@ class Karyawan extends CI_Controller
 		
 		$attr_nama_karyawan = array(
 			'required' => 'Nama harus diisi',
-			'min_length' => 'Nama minimal 5 karakter!',
+			'min_length' => 'Nama minimal 1 karakter!',
 			'max_length' => 'Nama maksimal 30 karakter!'
 		);
 		
 		$attr_alamat_karyawan = array(
 			'required' => 'Alamat harus diisi',
-			'min_length' => 'Alamat minimal 5 karakter!',
+			'min_length' => 'Alamat minimal 1 karakter!',
 			'max_length' => 'Alamat maksimal 50 karakter!'
 		);
 
@@ -81,9 +81,9 @@ class Karyawan extends CI_Controller
 			'required' => 'Nomor Telepon harus diisi',
 		);
 
-		$this->form_validation->set_rules('nama_karyawan', 'Nama', 'trim|required|min_length[5]|max_length[30]', $attr_nama_karyawan);
+		$this->form_validation->set_rules('nama_karyawan', 'Nama', 'trim|required|min_length[1]|max_length[30]', $attr_nama_karyawan);
 
-		$this->form_validation->set_rules('alamat_karyawan', 'Alamat', 'trim|required|min_length[5]|max_length[50]', $attr_alamat_karyawan);
+		$this->form_validation->set_rules('alamat_karyawan', 'Alamat', 'trim|required|min_length[1]|max_length[50]', $attr_alamat_karyawan);
 
 		$this->form_validation->set_rules('noTelp', 'Nomor Telepon', 'trim|required', $attr_noTelp);
 	}
