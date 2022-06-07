@@ -22,7 +22,6 @@ class Transaksi extends CI_Controller
     $label_tanggalmasuk = form_label('Tanggal Masuk', 'tanggalmasuk');
     $label_tanggalkeluar = form_label('Tanggal Keluar', 'tanggalkeluar');
     $label_berat = form_label('Berat', 'berat');
-    $label_banyakpaket = form_label('Jumlah Paket', 'banyakpaket');
     $label_jeniscucian = form_label('Jenis Laundry', 'jeniscucian');
     $label_pakaian = form_label('Jenis Cucian', 'pakaian');
     $label_bayar = form_label('Harga', 'bayar');
@@ -43,7 +42,6 @@ class Transaksi extends CI_Controller
     $input_id = form_input($attr_id);
     $input_tanggalkeluar = form_input('tanggalkeluar');
     $input_berat = form_input('berat');
-    $input_banyakpaket = form_input('banyakpaket');
     $get_jeniscucian = $this->Transaksi_model->get_jeniscucian();
     $jeniscucian = array();
     foreach ($get_jeniscucian as $r) {
@@ -71,18 +69,15 @@ class Transaksi extends CI_Controller
       'label_tanggalmasuk' => $label_tanggalmasuk,
       'label_tanggalkeluar' => $label_tanggalkeluar,
       'label_berat' => $label_berat,
-      'label_banyakpaket' => $label_banyakpaket,
       'label_jeniscucian' => $label_jeniscucian,
       'label_pakaian' => $label_pakaian,
       'label_bayar' => $label_bayar,
-      'label_banyakpaket' => $label_banyakpaket,
       'label_totalbayar' => $label_totalbayar,
       'input_id'=> $input_id,
       'dropdown_pelanggan' => $dropdown_pelanggan,
       'input_tanggalmasuk' => $input_tanggalmasuk,
       'input_tanggalkeluar' => $input_tanggalkeluar,
       'input_berat' => $input_berat,
-      'input_banyakpaket' => $input_banyakpaket,
       'dropdown_jeniscucian' => $dropdown_jeniscucian,
       'dropdown_pakaian' => $dropdown_pakaian,
       'input_bayar' => $input_bayar,
@@ -115,7 +110,6 @@ class Transaksi extends CI_Controller
       $tanggalmasuk = $this->input->post('tanggalmasuk');
       $tanggalkeluar = $this->input->post('tanggalkeluar');
       $berat = $this->input->post('berat');
-      $banyakpaket = $this->input->post('banyakpaket');
       $jeniscucian = $this->input->post('jeniscucian');
       $pakaian = $this->input->post('pakaian');
       $bayar = $this->input->post('bayar');
@@ -125,7 +119,6 @@ class Transaksi extends CI_Controller
         'tanggalmasuk' => $tanggalmasuk,
         'tanggalkeluar' => $tanggalkeluar,
         'berat' => $berat,
-        'banyakpaket' => $banyakpaket,
         'id_jenis' => $jeniscucian,
         'id_pakaian' => $pakaian,
         'bayar' => $bayar,
@@ -153,7 +146,6 @@ class Transaksi extends CI_Controller
     $tanggalmasuk =  $row->tanggalmasuk;
     $tanggalkeluar = $row->tanggalkeluar;
     $berat = $row->berat;
-    $banyakpaket = $row->banyakpaket;
     $id_jenis = $row->id_jenis;
     $id_pakaian = $row->id_pakaian;
     $bayar = $row->bayar;
@@ -164,7 +156,6 @@ class Transaksi extends CI_Controller
     $label_tanggalmasuk = form_label('Tanggal Masuk', 'tanggalmasuk');
     $label_tanggalkeluar = form_label('Tanggal Keluar', 'tanggalkeluar');
     $label_berat = form_label('Berat', 'berat');
-    $label_banyakpaket = form_label('Jumlah Paket', 'banyakpaket');
     $label_jeniscucian = form_label('Jenis Laundry', 'id_jenis');
     $label_pakaian = form_label('Jenis Cucian', 'id_pakaian');
     $label_bayar = form_label('Harga', 'bayar');
@@ -180,7 +171,6 @@ class Transaksi extends CI_Controller
     $input_tanggalmasuk = form_input('tanggalmasuk', $tanggalmasuk);
     $input_tanggalkeluar = form_input('tanggalkeluar', $tanggalkeluar);
     $input_berat = form_input('berat', $berat);
-    $input_banyakpaket = form_input('banyakpaket', $banyakpaket);
     $get_jeniscucian = $this->Transaksi_model->get_jeniscucian();
     $jeniscucian = array();
     foreach ($get_jeniscucian as $r) {
@@ -208,7 +198,6 @@ class Transaksi extends CI_Controller
       'label_tanggalmasuk' => $label_tanggalmasuk,
       'label_tanggalkeluar' => $label_tanggalkeluar,
       'label_berat' => $label_berat,
-      'label_banyakpaket' => $label_banyakpaket,
       'label_jeniscucian' => $label_jeniscucian,
       'label_pakaian' => $label_pakaian,
       'label_bayar' => $label_bayar,
@@ -219,7 +208,6 @@ class Transaksi extends CI_Controller
       'input_tanggalmasuk' => $input_tanggalmasuk,
       'input_tanggalkeluar' => $input_tanggalkeluar,
       'input_berat' => $input_berat,
-      'input_banyakpaket' => $input_banyakpaket,
       'dropdown_jeniscucian' => $dropdown_jeniscucian,
       'dropdown_pakaian' => $dropdown_pakaian,
       'input_bayar' => $input_bayar,
@@ -247,7 +235,6 @@ class Transaksi extends CI_Controller
       $tanggalmasuk = $this->input->post('tanggalmasuk');
       $tanggalkeluar = $this->input->post('tanggalkeluar');
       $berat = $this->input->post('berat');
-      $banyakpaket = $this->input->post('banyakpaket');
       $jeniscucian = $this->input->post('jeniscucian');
       $pakaian = $this->input->post('pakaian');
       $bayar = $this->input->post('bayar');
@@ -257,7 +244,6 @@ class Transaksi extends CI_Controller
         'tanggalmasuk' => $tanggalmasuk,
         'tanggalkeluar' => $tanggalkeluar,
         'berat' => $berat,
-        'banyakpaket' => $banyakpaket,
         'id_jenis' => $jeniscucian,
         'id_pakaian' => $pakaian,
         'bayar' => $bayar,
