@@ -28,13 +28,11 @@ class Pelanggan extends CI_Controller
 			'name' => 'id_pelanggan',
 			'value' => set_value('id_pelanggan')
 		);
-		$label_paket = form_label('Paket', 'paket');
 
 		$input_nama = form_input('nama');
 		$input_alamat = form_input('alamat');
 		$input_noTelp = form_input('noTelp');
 		$input_jenkel = form_input('jenkel');
-		$input_paket = form_input('paket');
 		$input_id = form_input($attr_id);
 		
 		$form_submit = form_submit('submit', 'simpan');
@@ -51,14 +49,12 @@ class Pelanggan extends CI_Controller
 			'label_alamat' => $label_alamat,
 			'label_noTelp' => $label_noTelp,
 			'label_jenkel' => $label_jenkel,
-			'label_paket' => $label_paket,
 
 			'input_id'=> $input_id,
 			'input_nama' => $input_nama,
 			'input_alamat' => $input_alamat,
 			'input_noTelp' => $input_noTelp,
 			'input_jenkel' => $input_jenkel,
-			'input_paket' =>$input_paket,
 
 			'form_submit' => $form_submit,
 			'form_reset' => $form_reset,
@@ -108,13 +104,11 @@ class Pelanggan extends CI_Controller
 			$alamat = $this->input->post('alamat');
 			$noTelp = $this->input->post('noTelp');
 			$jenkel = $this->input->post('jenkel');
-			$paket = $this->input->post('paket');
 			$data = array(
 				'nama' => $nama,
 				'alamat' => $alamat,
 				'noTelp' => $noTelp,
 				'jenkel' => $jenkel,
-				'paket' => $paket,
 			);
 			$this->Pelanggan_model->insert_data($data);
 			$this->session->set_flashdata('pesan', 'Data berhasil ditambah!');
@@ -137,7 +131,6 @@ class Pelanggan extends CI_Controller
 		$alamat = $row->alamat;
 		$noTelp = $row->noTelp;
 		$jenkel = $row->jenkel;
-		$paket = $row->paket;
 
 		$form_open = form_open('pelanggan/edit_aksi');
 
@@ -145,13 +138,11 @@ class Pelanggan extends CI_Controller
 		$label_alamat = form_label('Alamat', 'alamat');
 		$label_noTelp = form_label('Nomor Telepon', 'noTelp');
 		$label_jenkel = form_label('Jenis Kelamin', 'jenkel');
-		$label_paket = form_label('Paket', 'paket');
 		
 		$input_nama = form_input('nama', $nama);
 		$input_alamat = form_input('alamat', $alamat);
 		$input_noTelp = form_input('noTelp', $noTelp);
 		$input_jenkel = form_input('jenkel', $jenkel);
-		$input_paket = form_input('paket', $paket);
 		$input_id = form_input($attr_id);
 		
 		$form_submit = form_submit('submit', 'simpan');
@@ -168,14 +159,12 @@ class Pelanggan extends CI_Controller
 			'label_alamat' => $label_alamat,
 			'label_noTelp' => $label_noTelp,
 			'label_jenkel' => $label_jenkel,
-			'label_paket' => $label_paket,
 
 			'input_id'=> $input_id,
 			'input_nama' => $input_nama,
 			'input_alamat' => $input_alamat,
 			'input_noTelp' => $input_noTelp,
 			'input_jenkel' => $input_jenkel,
-			'input_paket' =>$input_paket,
 
 			'form_submit' => $form_submit,
 			'form_reset' => $form_reset,
@@ -204,13 +193,11 @@ class Pelanggan extends CI_Controller
 			$alamat = $this->input->post('alamat');
 			$noTelp = $this->input->post('noTelp');
 			$jenkel = $this->input->post('jenkel');
-			$paket = $this->input->post('paket');
 			$data = array(
 				'nama' => $nama,
 				'alamat' => $alamat,
 				'noTelp' => $noTelp,
 				'jenkel' => $jenkel,
-				'paket' => $paket,
 			);
 			$this->Pelanggan_model->update_data($id, $data);
 			$this->session->set_flashdata('pesan', 'Data berhasil diubah!');
